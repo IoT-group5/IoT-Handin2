@@ -45,6 +45,9 @@ void TaskSample (void *pvParameters)
     
     bl_rtc_init();
     
+    uint32_t startTime = bl_rtc_get_timestamp_ms(); // nyt
+    uint32_t i = 0; // nyt
+
     while (1) {
         ADC_Start();
         while (ADC_Get_FIFO_Count() == 0)
@@ -55,7 +58,13 @@ void TaskSample (void *pvParameters)
         // from ADC_Parse_Result
         unsigned int val = (unsigned int)(((regval&0xffff)>>4)/1);
         
+        uint32_t INPUT_DELAY = 100; //fix til dynamisk
+
+        vTaskDelay(INPUT_DELAY); // nyt
+
         printf("%u,%u\n", t, val);
+
+        i++; // nyt
     }
 }
 
