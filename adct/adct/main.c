@@ -45,7 +45,7 @@ void TaskSample(void *pvParameters)
 
     bl_rtc_init();
 
-    //We set a start time and an iterator i to 0
+    //We set a start time and a counter i to 0
     uint32_t startTime = bl_rtc_get_timestamp_ms();
     uint32_t i = 0;
 
@@ -70,7 +70,7 @@ void TaskSample(void *pvParameters)
 
         printf("%u,%u\n", t, val);
 
-        //we increment the iterator variable
+        //we increment the counter variable
         i++;
     }
 }
