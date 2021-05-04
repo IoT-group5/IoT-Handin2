@@ -7,12 +7,12 @@ if __name__ == '__main__':
     # Loop through 1000 times
     while i <= 1000:
         t = round(time.time()*1000)  # Get current time
-        delay = start+(100*i)-t  # Calculate delay
+        outputDelay = start+(100*i)-t  # Calculate delay
         # Only delay if delay is greater than 0
         if delay > 0:
-            time.sleep(delay / 1000)  # Do delay
+            time.sleep(outputDelay / 1000)  # Do delay
         times.append(round(time.time()*1000))  # Log time
-        print(i, delay, round(time.time()*1000))  # Print iteration, delay, and current time
+        print(i, outputDelay, round(time.time()*1000))  # Print iteration, delay, and current time
         i += 1  # Increment incrementer i
     # For loop for calculating diffs between logged times
     for x in range(len(times)):
