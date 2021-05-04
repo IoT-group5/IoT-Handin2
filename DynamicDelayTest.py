@@ -7,7 +7,7 @@ if __name__ == '__main__':
     # Loop through 1000 times
     while i <= 1000:
         t = round(time.time()*1000)  # Get current time
-        delay = (100*i)+start-t  # Calculate delay
+        delay = start+(100*i)-t  # Calculate delay
         # Only delay if delay is greater than 0
         if delay > 0:
             time.sleep(delay / 1000)  # Do delay
