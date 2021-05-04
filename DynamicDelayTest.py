@@ -1,6 +1,6 @@
 import time
 if __name__ == '__main__':
-    i = 0  # Incrementer for delay calculation
+    i = 0  # Counter for delay calculation
     times = []  # Placeholder for logged times
     diffs = []  # Placeholder for diff between times
     start = round(time.time()*1000)  # Start time
@@ -13,7 +13,7 @@ if __name__ == '__main__':
             time.sleep(outputDelay / 1000)  # Do delay
         times.append(round(time.time()*1000))  # Log time
         print(i, outputDelay, round(time.time()*1000))  # Print iteration, delay, and current time
-        i += 1  # Increment incrementer i
+        i += 1  # Increment counter i by 1
     # For loop for calculating diffs between logged times
     for x in range(len(times)):
         # Skipping first element
