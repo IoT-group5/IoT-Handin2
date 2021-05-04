@@ -61,7 +61,7 @@ void TaskSample(void *pvParameters)
         unsigned int val = (unsigned int)(((regval & 0xffff) >> 4) / 1);
 
         //calculate a delay based on the current time and iteration
-        uint32_t outputDelay = (100 * i) + (startTime - t);
+        uint32_t outputDelay = startTime + (100 * i) - t;
 
         //no delay if the calculated delay is 0 or less
         if (outputDelay > 0){
